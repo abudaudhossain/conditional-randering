@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useState } from 'react';
+import Users from './components/Users/Users';
 
 function App() {
+  const [familier, setFamilier] = useState(false)
+  const handleFamiler = () =>{
+    setFamilier(!familier);
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>familier : {familier.toString()}</h1>
+      <button onClick={handleFamiler}>familier taggel</button>
+      <Users familier = {familier}></Users>
     </div>
   );
 }
