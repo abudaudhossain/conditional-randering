@@ -1,19 +1,17 @@
 
-import './App.css';
 import { useState } from 'react';
-import Users from './components/Users/Users';
+import './App.css';
+// import { useState } from 'react';
+// import Users from './components/Users/Users';
+import GrandFather from './components/GrandFather/GrandFather';
 
 function App() {
-  const [familier, setFamilier] = useState(false)
-  const handleFamiler = () =>{
-    setFamilier(!familier);
-  }
+  const [house, setHouse] = useState(2)
   
   return (
     <div className="App">
-      <h1>familier : {familier.toString()}</h1>
-      <button onClick={handleFamiler}>familier taggel</button>
-      <Users familier = {familier}></Users>
+      <button onClick = {() => setHouse(house+1)}>Buy House</button>
+      <GrandFather house = {house} ></GrandFather>
     </div>
   );
 }
